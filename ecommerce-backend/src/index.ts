@@ -75,7 +75,7 @@ app.post('/api/products', async(req , res)=>{
         {
             return res.status(400).json({message:error.message, errors: error.errors});
         }
-        res.status(500).json({})
+        res.status(500).json({message:'failed to create product',error: error.message});
     }
 });
 
