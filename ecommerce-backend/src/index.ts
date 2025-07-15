@@ -1,4 +1,4 @@
-import express, {Request,Response} from "express";
+import express, {application, Request,Response} from "express";
 import cors from "cors";
 import connectDB from "./config/db";
 import dotenv from "dotenv";
@@ -47,6 +47,35 @@ app.get('/api/products/:id', async(req,res )=>{
             return res.status(400).json({message:'invalid id error'});
         }
         res.status(500).json({message:'internal server error while finding product by id'});
+    }
+});
+app.post('/api/products', async(req , res)=>{
+
+    try{
+        const {name , description , price , imageUrl} = req.body;
+
+        if(!name || !description || !price || !imageUrl)
+        {
+            return res.status(400).json({message:'all fiels are mandatory'});
+        }
+
+        const newProduct = new Product({
+            name,
+            description,
+            price,
+            imageUrl,
+        });
+
+        const savedProduct = await newProduct.save();
+    }
+    catch(error: any){
+        console.error("error saving new product ",error);
+
+        if(error.name==='ValidationError')
+        {
+            return res.status(400).json({message:error.message, errors: error.errors});
+        }
+        res.status(500).json({})
     }
 });
 
