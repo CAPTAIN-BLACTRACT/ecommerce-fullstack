@@ -5,6 +5,8 @@ export interface IProduct extends Document{
     description:string;
     price:number;
     imageUrl:string;
+    createdAt?: Date; // Optional, Mongoose adds these with timestamps
+    updatedAt?: Date;
 }
 
 const ProductSchema: Schema = new Schema({
@@ -16,4 +18,4 @@ const ProductSchema: Schema = new Schema({
 });
 
 const Product : Model<IProduct> = mongoose.model<IProduct>('Product',ProductSchema);
-export {Product};
+export  {Product};
