@@ -1,6 +1,9 @@
 // src/seed.ts
+import { configDotenv } from 'dotenv';
 import connectDB from './config/db';
-import { Product } from './models/Product'; // Only need to import Product (the model)
+import { Product } from './models/Product'; // Only need to import Product (th
+import dotenv from 'dotenv';
+dotenv.config(); 
 
 // Derive the type for the data that can be inserted into the Product model.
 // Parameters<typeof Product.create>[0] gets the type of the first argument

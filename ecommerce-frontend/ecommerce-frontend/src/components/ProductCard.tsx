@@ -22,7 +22,7 @@ const ProductCard : React.FC<ProductCardProps> = ({product}) => {
                 <p className="product-card-price" >${product.price.toFixed(2)}</p>
                 {}
                 <Link to={`/product/${product._id}`} className = "product-card-link">
-                <button>View Detail</button>
+                <button className="product-card-button">View Detail</button>
                 </Link>
             </div>
         </div>

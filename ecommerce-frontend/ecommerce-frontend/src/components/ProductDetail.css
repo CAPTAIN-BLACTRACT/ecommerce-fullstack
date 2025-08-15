@@ -1,0 +1,105 @@
+/* Container for the entire product detail page */
+.product-detail-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for the back button */
+.back-button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Main content area containing image and product info */
+.product-detail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Style for the product image */
+.product-detail-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Style for the product information section */
+.product-info {
+  text-align: center;
+}
+
+.product-info h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+/* Price styling */
+.product-detail-price {
+  font-size: 2em;
+  color: #28a745;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Description styling */
+.product-detail-description {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+/* Add to cart button styling */
+.add-to-cart-button {
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for error messages */
+.error-message {
+  text-align: center;
+  color: #d9534f;
+  padding: 20px;
+  background-color: #f2dede;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+/* Responsive design for smaller screens */
+@media (min-width: 768px) {
+  .product-detail-content {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .product-info {
+    text-align: left;
+  }
+}

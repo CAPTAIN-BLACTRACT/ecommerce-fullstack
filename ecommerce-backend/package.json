@@ -1,9 +1,12 @@
 {
-  "name": "task-manager-backend",
+  "name": "ecommerce-backend", 
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.ts",  
   "scripts": {
-    "test": "nodemon src/index.ts"
+    "dev": "ts-node-dev --respawn src/index.ts",  
+    "start": "node dist/index.ts",               
+    "build": "tsc",                              
+    "seed": "ts-node src/seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,18 +17,20 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^4.17.23",
     "@types/node": "^24.0.13",
-    "cors": "^2.8.5",
-    "express": "^4.21.2",
+    "@types/jsonwebtoken": "^9.0.10",  
+    "nodemon": "^3.1.0",             
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",         
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@types/jsonwebtoken": "^9.0.10",
     "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.0",
+    "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mongodb": "^6.17.0",
     "mongoose": "^8.16.3"
+    
   },
   "description": ""
 }

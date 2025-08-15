@@ -1,4 +1,4 @@
-import express, {application, Request,Response} from "express";
+import express, {Application, Request,Response} from "express";
 import cors from "cors";
 import connectDB from "./config/db";
 import dotenv from "dotenv";
@@ -41,7 +41,7 @@ app.get('/api/products/:id', async(req,res )=>{
         res.status(200).json(product);
     }
     catch(error){
-        console.error(`Error fetching product by id : ${req.params.id}`, error);
+        console.error(`Error fetching product by id:${req.params.id}`, error);
 
         if(error instanceof mongoose.Error.CastError){
             return res.status(400).json({message:'invalid id error'});
@@ -67,6 +67,7 @@ app.post('/api/products', async(req , res)=>{
         });
 
         const savedProduct = await newProduct.save();
+        res.status(201).json(savedProduct);
     }
     catch(error: any){
         console.error("error saving new product ",error);
